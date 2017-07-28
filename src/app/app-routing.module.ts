@@ -6,10 +6,10 @@ import { PatientsComponent }      from './patients.component';
 import { PatientDetailComponent }  from './patient-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/patients', pathMatch: 'full' },
+  { path: 'patients',     component: PatientsComponent },
   { path: 'dashboard',  component: DashboardComponent },
-  { path: 'detail/:id', component: PatientDetailComponent },
-  { path: 'patients',     component: PatientsComponent }
+  { path: 'detail/:id', component: PatientDetailComponent }
 ];
 
 @NgModule({
