@@ -5,7 +5,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
-import { PatientDetailsComponent }  from './patient-detail.component';
+import { PatientDetailComponent }  from './patient-detail.component';
 import { PatientsComponent }      from './patients.component';
 import { PatientService }          from './patient.service';
 
