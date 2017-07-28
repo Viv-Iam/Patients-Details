@@ -1,10 +1,18 @@
-<div *ngIf="hero">
-  <h2>{{hero.name}} details!</h2>
+<div *ngIf="patient">
+  <h2>{{patient.name}} details!</h2>
   <div>
-    <label>id: </label>{{hero.id}}</div>
+    <label>id: </label>{{patient.id}}</div>
   <div>
-    <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name" />
+    <label>First Name: </label>
+    <input [(ngModel)]="patient.fname" placeholder="fname" />
+    <label>Last Name: </label>
+    <input [(ngModel)]="patient.lname" placeholder="lname" />
+    <label>Date of Birth: </label>
+    <input [(ngModel)]="patient.dob" placeholder="dob" />
+    <label>Telephone: </label>
+    <input [(ngModel)]="patient.telephone" placeholder="telephone" />
+    <label>Email: </label>
+    <input [(ngModel)]="patient.email" placeholder="email" />
   </div>
   <button (click)="goBack()">Back</button>
 </div>

@@ -11,3 +11,22 @@ import { PatientService }  from './patient.service';
   templateUrl: './patient-detail.component.html',
   styleUrls: [ './patient-detail.component.css' ]
 })
+export class PatientDetailComponent implements OnInit {
+  patient: Patient;
+
+  constructor(
+    private patientService: PatientService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
+
+  ngOnInit(): void {
+    this.route.paramMap
+      .switchMap((params: ParamMap) => this.patietnService.getPatient(+params.get('id')))
+      .subscribe(patient => this.patient = patient);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+}
