@@ -1,14 +1,14 @@
-<h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-    [class.selected]="hero === selectedHero"
+<h2>Selected Patient</h2>
+<ul class="patients">
+  <li *ngFor="let patient of patients"
+    [class.selected]="patient === selectedPatient"
     (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <span class="badge">{{patient.id}}</span> {{patient.fname}}
   </li>
 </ul>
-<div *ngIf="selectedHero">
+<div *ngIf="selectedPatient">
   <h2>
-    {{selectedHero.name | uppercase}} is my hero
+    {{selectedPatient.fname | uppercase}}
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
