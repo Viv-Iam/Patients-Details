@@ -22,7 +22,7 @@ export class PatientDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.patietnService.getPatient(+params.get('id')))
+      .switchMap((params: ParamMap) => this.patientService.getPatient(+params.get('id')))
       .subscribe(patient => this.patient = patient);
   }
 

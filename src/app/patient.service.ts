@@ -1,4 +1,4 @@
-import { Patient } from './hero';
+import { Patient } from './patient';
 import { PATIENTS } from './mock-patients';
 import { Injectable } from '@angular/core';
 
