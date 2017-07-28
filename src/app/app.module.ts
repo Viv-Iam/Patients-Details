@@ -5,9 +5,9 @@ import { BrowserModule }  from '@angular/platform-browser';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
-import { PatientDetailsComponent }  from './hero-detail.component';
-import { PatientsComponent }      from './heroes.component';
-import { PatientService }          from './hero.service';
+import { PatientDetailsComponent }  from './patient-detail.component';
+import { PatientsComponent }      from './patients.component';
+import { PatientService }          from './patient.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -20,10 +20,10 @@ import { AppRoutingModule }     from './app-routing.module';
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroDetailComponent,
-    HeroesComponent
+    PatientDetailComponent,
+    PatientsComponent
   ],
-  providers: [ HeroService ],
+  providers: [ PatientService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
