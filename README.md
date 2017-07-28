@@ -1,6 +1,16 @@
-# PatientsDetails
+# Author: **Vivian Opondoh**
+
+## Project: PatientsDetails
+
+## Description: *This is app facilitates the monitoring of patients details by enabling user to be able to add, edit and delete patients details from a list.*
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
+
+## Setup for local development
+  Clone: git clone https://github.com/Viv-Iam/Patients-Details.git app-name
+  *cd app-name
+  npm install
+  npm start*
 
 ## Development server
 
