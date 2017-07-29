@@ -1,9 +1,16 @@
-<!-- <h2>Selected Patient</h2> -->
+<div>
+  <label>Patient First Name:</label> <input #patientName />
+  <button (click)="add(patientName.value); patientName.value=''">
+    Add
+  </button>
+</div>
 <ul class="patients">
   <li *ngFor="let patient of patients"
     [class.selected]="patient === selectedPatient"
     (click)="onSelect(patient)">
     <span class="badge">{{patient.id}}</span> {{patient.fname}} {{patient.lname}}
+    <button class="delete"
+    (click)="delete(patient); $event.stopPropagation()">x</button>
   </li>
 </ul>
 <div *ngIf="selectedPatient">

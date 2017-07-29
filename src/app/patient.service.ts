@@ -39,4 +39,19 @@ return this.http.get(url)
     .then(() => patient)
     .catch(this.handleError);
 }
+
+create(fname: string): Promise<Patient> {
+  return this.http
+    .post(this.patientsUrl, JSON.stringify({fname: fname}), {headers: this.headers})
+    .toPromise()
+    .then(res => res.json().data as Patient)
+    .catch(this.handleError);
+}
+delete(id: number): Promise<void> {
+  const url = `${this.patientsUrl}/${id}`;
+  return this.http.delete(url, {headers: this.headers})
+    .toPromise()
+    .then(() => null)
+    .catch(this.handleError);
+}
 }
