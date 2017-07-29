@@ -1,10 +1,10 @@
 import { NgModule }       from '@angular/core';
 import { FormsModule }    from '@angular/forms';
 import { BrowserModule }  from '@angular/platform-browser';
+import { HttpModule }    from '@angular/http';
 
 
 import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard.component';
 import { PatientDetailComponent }  from './patient-detail.component';
 import { PatientsComponent }      from './patients.component';
 import { PatientService }          from './patient.service';
@@ -15,11 +15,11 @@ import { AppRoutingModule }     from './app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
     PatientDetailComponent,
     PatientsComponent
   ],
