@@ -3,7 +3,7 @@
   <li *ngFor="let patient of patients"
     [class.selected]="patient === selectedPatient"
     (click)="onSelect(patient)">
-    <span class="badge">{{patient.id}}</span> {{patient.fname}}
+    <span class="badge">{{patient.id}}</span> {{patient.fname}} {{patient.lname}}
   </li>
 </ul>
 <div *ngIf="selectedPatient">
