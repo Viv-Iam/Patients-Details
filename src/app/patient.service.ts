@@ -11,8 +11,9 @@ private patientsUrl = 'api/patients';
 
 constructor(private http: Http) { }
 
-getPatients(): Promise<Patient[]> {
-return this.http.get(this.patientsUrl)
+getPatients(id: number): Promise<Patient[]> {
+const url = `${this.patientsUrl}/${id}`;
+return this.http.get(url)
            .toPromise()
            .then(response => response.json().data as Patient[])
            .catch(this.handleError);
