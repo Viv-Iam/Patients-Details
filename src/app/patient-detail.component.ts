@@ -25,6 +25,10 @@ export class PatientDetailComponent implements OnInit {
       .switchMap((params: ParamMap) => this.patientService.getPatient(+params.get('id')))
       .subscribe(patient => this.patient = patient);
   }
+  save(): void {
+  this.patientService.update(this.patient)
+    .then(() => this.goBack());
+}
 
   goBack(): void {
     this.location.back();

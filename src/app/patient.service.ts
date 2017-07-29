@@ -11,9 +11,8 @@ private patientsUrl = 'api/patients';
 
 constructor(private http: Http) { }
 
-getPatients(id: number): Promise<Patient[]> {
-const url = `${this.patientsUrl}/${id}`;
-return this.http.get(url)
+getPatients(): Promise<Patient[]> {
+return this.http.get(this.patientsUrl)
            .toPromise()
            .then(response => response.json().data as Patient[])
            .catch(this.handleError);
@@ -25,7 +24,19 @@ return Promise.reject(error.message || error);
 }
 
   getPatient(id: number): Promise<Patient> {
-    return this.getPatients()
-               .then(patients => patients.find(patient => patient.id === id));
+  const url = `${this.patientsUrl}/${id}`;
+return this.http.get(url)
+  .toPromise()
+  .then(response => response.json().data as Patient)
+  .catch(this.handleError);
   }
+  private headers = new Headers({'Content-Type': 'application/json'});
+  update(patient: Patient): Promise<Patient> {
+  const url = `${this.patientsUrl}/${patient.id}`;
+  return this.http
+    .put(url, JSON.stringify(patient), {headers: this.headers})
+    .toPromise()
+    .then(() => patient)
+    .catch(this.handleError);
+}
 }
